@@ -19,8 +19,8 @@ async function bootstrap() {
   app.enableCors();
 
   const options = new DocumentBuilder()
-    .setTitle('Book store api')
-    .setDescription('Query books from the book store api.')
+    .setTitle('MVDB wishlist api')
+    .setDescription('Organize items on your wishlist')
     .setVersion('1.0')
     .build();
 
