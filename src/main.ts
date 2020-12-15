@@ -19,6 +19,7 @@ async function bootstrap() {
   app.enableCors();
 
   const options = new DocumentBuilder()
+    .addBearerAuth()
     .setTitle('MVDB wishlist api')
     .setDescription('Organize items on your wishlist')
     .setVersion('1.0')
