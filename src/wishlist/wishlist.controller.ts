@@ -13,21 +13,21 @@ export class WishlistController {
   @Get()
   @UseGuards(AuthGuard('jwt'))
   findByOwner(@Req() req) {
-    const owner = req.user.id;
+    const owner = req.user.Id;
     return this.wishlistService.findByOwner(owner);
   }
 
   @Post()
   @UseGuards(AuthGuard('jwt'))
   add(@Req() req, @Body() addToWishlistDto: AddToWishlistDto) {
-    const owner = req.user.id;
+    const owner = req.user.Id;
     return this.wishlistService.add(owner, addToWishlistDto);
   }
 
   @Delete(':id')
   @UseGuards(AuthGuard('jwt'))
   remove(@Req() req, @Param('id') id: string) {
-    const owner = req.user.id;
+    const owner = req.user.Id;
     return this.wishlistService.remove(owner, id);
   }
 }
