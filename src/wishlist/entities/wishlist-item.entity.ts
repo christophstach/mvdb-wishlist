@@ -1,15 +1,16 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn, Unique } from 'typeorm';
 
 export enum WishlistItemType {
   Movie = 'Movie',
 }
 
 @Entity({ name: 'wishlist_items' })
+@Unique('UQ_USER_ITEMS', ['owner', 'referenceId'])
 export class WishlistItem {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column({ unique: true })
+  @Column()
   referenceId: string;
 
   @Column()
