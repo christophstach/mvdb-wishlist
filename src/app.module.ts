@@ -5,7 +5,6 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { WishlistModule } from './wishlist/wishlist.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { JwtStrategy } from './jwt.strategy';
-import { JeffStrategy } from './jeff.strategy';
 
 @Module({
   imports: [
@@ -30,9 +29,6 @@ import { JeffStrategy } from './jeff.strategy';
     WishlistModule,
   ],
   controllers: [AppController],
-  providers: [
-    JwtStrategy,
-    JeffStrategy
-  ],
+  providers: [JwtStrategy],
 })
 export class AppModule {}
